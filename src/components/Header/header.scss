@@ -1,41 +1,77 @@
 @import './../../styles/mixins.scss';
-.header{
-    padding: 2% 20%;
-    &__top{
+
+.header {
+
+    &__top {
         @include flex(space-between, center, nowrap);
         gap: 10%;
         flex-direction: row;
+        padding: 1% 20%;
 
-        &-search{
+        &-search {
             padding: 5px 10px;
             color: #908F8D;
             border: 1px solid #908F8D;
             outline: none;
         }
-        &-contacts{
-            @include flex(end, center, nowrap);
+
+        &-contacts {
+            @include flex(end, end, nowrap);
             flex-direction: column;
         }
     }
-    &__bottom{
+
+    &__bottom {
         @include flex(end, center, nowrap);
+        padding: 1% 20%;
         flex-direction: row;
         gap: 20%;
-        padding-top: 3rem;
+        // width: 100vw;
+        border-bottom: #EDEDED 1px solid;
+        border-top: #EDEDED 1px solid;
 
-        &-nav{
+        &-nav {
             @include flex(center, center, nowrap);
             gap: 1rem;
 
-            &__link{
+            &__link {
                 text-decoration: none;
                 color: #41403E;
             }
 
         }
-        &-icons{
+
+        &-icons {
             @include flex(center, center, nowrap);
             gap: 10px;
         }
+    }
+}
+
+.contacts-title {
+    color: #908F8D;
+    font-weight: 200;
+}
+
+.cart__wrapper {
+    position: relative;
+
+    &-count {
+         position: absolute;
+          line-height: 0;
+    font-family: Arial, sans-serif;
+    top: -8px;
+    right: -12px;
+    background: #DEAD6F;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #EDEDED;
+    font-size: 10px;
+    outline: 3px solid #fff;
+    box-sizing: border-box;
     }
 }

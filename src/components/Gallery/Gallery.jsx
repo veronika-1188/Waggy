@@ -8,9 +8,9 @@ function Gallery() {
      <section className="gallery">
        <div className="gallery__grid">
         {
-            images.map((img)=>{
+            images.map((img, index)=>{
                 return (
-                    <img src={img}></img>
+                    <img key={index} src={img}></img>
                 )
             })
         }

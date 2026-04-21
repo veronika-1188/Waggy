@@ -4,11 +4,15 @@ import { useState } from "react";
 import { MdOutlineStar } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 import products from "../../assets/data";
+import BtnAddToCart from "../BtnAddToCart/BtnAddToCart";
+import useLocalStorage from "../../hooks/useLocalStorage";
+import AddToFav from "../AddToFav/AddToFav";
 
-function Products({ cartCount, setCartCount }) {
+function Products({ cart, setCart, favourites, setFavourites }) {
   const [showCat, setShowCat] = useState(true);
   const [showDog, setShowDog] = useState(true);
   const [showBird, setShowBird] = useState(true);
+
 
   const filtered = products.filter((product) => {
     const matchCategory =
@@ -32,9 +36,8 @@ function Products({ cartCount, setCartCount }) {
     setShowCat(true);
   };
   //console.log(grouped)
-  const addToCart = () => {
-    setCartCount(Number(cartCount) + 1);
-  };
+
+
   return (
     <section className="products">
       <div className="products__top">
@@ -97,29 +100,20 @@ function Products({ cartCount, setCartCount }) {
       </div>
       <div className="products__catalog">
         {Object.entries(grouped).map(([category, products]) => {
-            return(
-            products.map((product) => {
+          return (
+            products.map((product, index) => {
               return (
-                <div className="products__catalog-card">
+                <div className="products__catalog-card" key={index}>
                   <img src={product.img} alt="" className="card-img" />
                   <div className="card-info">
                     <h3 className="card-title">{product.title}</h3>
                     <div className="card-rating">
                       <MdOutlineStar /> <p>{product.rating}</p>
                     </div>
-                    <p className="card-price">{product.price}</p>
+                    <p className="card-price">${product.price}</p>
                     <div className="card-btns">
-                      <button
-                        className="btn-Add"
-                        onClick={() => {
-                          addToCart();
-                        }}
-                      >
-                        ADD TO CART
-                      </button>
-                      <button className="btn-like">
-                        <FaHeart />
-                      </button>
+                      <BtnAddToCart product={product} setCart={setCart} cart={cart}/>
+                     <AddToFav product={product} setFavourites={setFavourites} favourites={favourites}/>
                     </div>
                   </div>
                 </div>

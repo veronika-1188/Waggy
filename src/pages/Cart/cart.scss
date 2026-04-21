@@ -1,0 +1,12 @@
+@import './../../styles/mixins.scss';
+
+.cart__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30%;
+    margin: 2vh 0;
+    padding: 1% 3%;
+    background-color: #F7EEE4;
+    
+}

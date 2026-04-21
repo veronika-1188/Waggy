@@ -13,7 +13,7 @@ const products = [
     img: `${P1}`,
     title: 'Dry food',
     rating: '4.0',
-    price: '$18.00',
+    price: '18.00',
     category: 'dog',
 },
    {
@@ -21,7 +21,7 @@ const products = [
     img: `${P2}`,
     title: 'Canned dog food',
     rating: '4.0',
-    price: '$8.00',
+    price: '8.00',
     category: 'dog',
 },
   {
@@ -29,7 +29,7 @@ const products = [
     img: `${P3}`,
     title: 'Treats for cats',
     rating: '5.0',
-    price: '$5.00',
+    price: '5.00',
     category: 'cat',
 },
   {
@@ -37,7 +37,7 @@ const products = [
     img: `${P4}`,
     title: 'Pate for dogs',
     rating: '5.0',
-    price: '$7.00',
+    price: '7.00',
     category: 'dog',
 },
   {
@@ -45,7 +45,7 @@ const products = [
     img: `${P5}`,
     title: 'Dry cat food',
     rating: '3.0',
-    price: '$10.00',
+    price: '10.00',
     category: 'cat',
 },
   {
@@ -53,7 +53,7 @@ const products = [
     img: `${P6}`,
     title: 'Food for parrots',
     rating: '5.0',
-    price: '$12.00',
+    price: '12.00',
     category: 'bird',
 },
   {
@@ -61,7 +61,7 @@ const products = [
     img: `${P7}`,
     title: 'Canned dog food',
     rating: '4.5',
-    price: '$15.00',
+    price: '15.00',
     category: 'dog',
 },
 
@@ -70,7 +70,7 @@ const products = [
     img: `${P8}`,
     title: 'Сandy for cats',
     rating: '5.0',
-    price: '$3.00',
+    price: '3.00',
     category: 'cat',
 }
 
