@@ -1,0 +1,19 @@
+@import './../../styles/mixins.scss';
+
+.btn-like{
+    @include btn(20px);
+    margin-right: 10px;
+    &:hover {
+        background: #DEAD6F;
+        color: #363634;
+    }
+    &.liked {
+        background: #DEAD6F;
+        color: #363634;
+    }
+
+}
+
+
+
+        

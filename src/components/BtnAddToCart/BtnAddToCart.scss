@@ -1,0 +1,17 @@
+@import './../../styles/mixins.scss';
+.btn-Add{
+    @include btn(20px);
+    margin-right: 10px;
+
+    &:hover {
+    background: #DEAD6F;
+    color: #363634;
+    }
+
+    &.added {
+        background: #DEAD6F;
+        color: #363634;
+    }
+}
+
+

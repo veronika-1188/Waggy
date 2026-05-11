@@ -1,0 +1,67 @@
+@import './../../styles/mixins.scss';
+.products{
+    color: #41403E;
+    padding: 5%;
+
+    &__top{
+        @include flex(center, center, nowrap);        
+        gap: 5%;
+
+        &-filter{
+            display: flex;
+            gap: 10px;
+        }
+
+        &-btn{
+            @include btn(15px)
+            
+        }
+
+         &-btn:hover {
+background: #DEAD6F;
+color: #363634;
+    }
+
+    }
+
+    &__catalog{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        
+        gap: 3%;
+        margin: 2% 5%;
+
+        &-card{
+            
+            border-radius: 15px;
+            padding: 1rem;
+
+            
+
+            .card-img{
+                background-color: #EEEBE5;
+                height: 50%;
+                width: 100%;
+                object-fit: contain;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            }
+
+            .card-info{
+                @include flex(start, start, nowrap);
+                flex-direction: column;
+                gap: 15px;
+
+                .card-rating{
+                    @include flex(flex-start, center, nowrap)
+                }
+            }
+            .card-price {
+                color: #DEAD6F;
+            }
+            
+        }
+    }
+}
+
+
