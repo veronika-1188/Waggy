@@ -18,13 +18,14 @@ import CookieConsent from "react-cookie-consent";
 function App() {
     const [cart, setCart] = useLocalStorage('cart', []);
     const [favourites, setFavourites] = useLocalStorage('favourites', []);
+    const [searchQuery, setSearchQuery] = useState("");
     // console.log(cart)
   return (
     <div className="App">
       
-      <Header cart={cart}/>
+      <Header cart={cart} setSearchQuery={setSearchQuery}/>
       <Routes>
-         <Route index element={<HomePage cart={cart} setCart={setCart} favourites={favourites} setFavourites={setFavourites}/>} />
+         <Route index element={<HomePage cart={cart} setCart={setCart} favourites={favourites} setFavourites={setFavourites} searchQuery={searchQuery}/>} />
          <Route path="/cart" element={<Cart cart={cart} setCart={setCart} favourites={favourites} setFavourites={setFavourites}/>} />
          <Route path="/favourites" element={<Favourites cart={cart} setCart={setCart} favourites={favourites} setFavourites={setFavourites}/>} />
          <Route path="*" element={<NotFound />} />

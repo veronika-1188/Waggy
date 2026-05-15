@@ -5,17 +5,16 @@ import Products from '../../components/Products/Products';
 import { useState } from 'react';
 import useLocalStorage from '../../hooks/useLocalStorage'
 
-function HomePage({cart, setCart, favourites, setFavourites}) {
+function HomePage({cart, setCart, favourites, setFavourites, searchQuery}) {
 
-
-    
     return (
         <>
-            <Hero />
+            {!searchQuery && <Hero />}
             <Products cart={cart} 
             setCart={setCart}
             favourites={favourites}
-            setFavourites={setFavourites} />
+            setFavourites={setFavourites}
+            searchQuery={searchQuery}/>
             <Offer />
             <Gallery />
         </>

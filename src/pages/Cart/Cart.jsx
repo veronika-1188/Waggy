@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom'
 function Cart({ cart, setCart, favourites, setFavourites }) {
   const [cartCheck, setCartCheck] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
 
   useEffect(() => {
     if (cart.length === 0) return;
@@ -51,14 +52,18 @@ function Cart({ cart, setCart, favourites, setFavourites }) {
 
   useEffect(() => {
     let sum = 0;
-    let firstCheck = 0;
+    let itemsCount = 0;
+
     cart.forEach((cartItem) => {
       if (cartCheck.includes(cartItem.id)) {
         const price = Number(cartItem.price) * (cartItem.count || 1);
         sum += price;
+        itemsCount += (cartItem.count || 1);
       }
     });
+
     setTotalPrice(sum);
+    setTotalItems(itemsCount);
   }, [cart, cartCheck]);
 
   return (
@@ -129,7 +134,7 @@ function Cart({ cart, setCart, favourites, setFavourites }) {
       </div>
       <div className="cart__total">
       <div className="total__wrapper">
-        <span className="wrapper-label">Total: </span>
+        <span className="wrapper-label">Total: {totalItems} items </span>
         <span className="wrapper-currency">$</span>
         <span className="wrapper-currency">{totalPrice}</span></div>      
           <Link to="/" className="total-button"> 

@@ -8,7 +8,7 @@ import BtnAddToCart from "../BtnAddToCart/BtnAddToCart";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import AddToFav from "../AddToFav/AddToFav";
 
-function Products({ cart, setCart, favourites, setFavourites }) {
+function Products({ cart, setCart, favourites, setFavourites, searchQuery }) {
   const [showCat, setShowCat] = useState(true);
   const [showDog, setShowDog] = useState(true);
   const [showBird, setShowBird] = useState(true);
@@ -21,7 +21,12 @@ function Products({ cart, setCart, favourites, setFavourites }) {
       (product.category === "dog" && showDog) ||
       (product.category === "bird" && showBird);
 
-    return matchCategory;
+    const matchSearch = product.title
+    .toLowerCase()
+    .includes(searchQuery.toLowerCase());
+
+
+      return matchCategory && matchSearch;
   });
 
   const grouped = filtered.reduce((acc, product) => {

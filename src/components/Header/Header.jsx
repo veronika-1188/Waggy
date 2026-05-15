@@ -6,7 +6,7 @@ import { FaUser, FaHeart, FaShoppingCart } from "react-icons/fa";
 import logo from "../../assets/img/logo.svg";
 import { NavLink } from "react-router-dom";
 
-function Header({ cart }) {
+function Header({ cart, setSearchQuery }) {
   return (
     <header className="header">
       <div className="header__top">
@@ -18,6 +18,7 @@ function Header({ cart }) {
             type="search"
             name="search"
             placeholder="Search for more than 10, 000 products"
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
         <div className="header__top-contacts">
