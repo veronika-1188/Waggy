@@ -19,7 +19,6 @@ function App() {
     const [cart, setCart] = useLocalStorage('cart', []);
     const [favourites, setFavourites] = useLocalStorage('favourites', []);
     const [searchQuery, setSearchQuery] = useState("");
-    // console.log(cart)
   return (
     <div className="App">
       

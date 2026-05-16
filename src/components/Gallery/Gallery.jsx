@@ -1,7 +1,6 @@
 import React from 'react'
 import './gallery.scss'
 import images from './../../assets/dataGallery'
-//import G1 from './../../assets/img/gallery1.jpg'
 
 function Gallery() {
   return (

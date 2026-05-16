@@ -40,7 +40,6 @@ function Products({ cart, setCart, favourites, setFavourites, searchQuery }) {
     setShowDog(false);
     setShowCat(true);
   };
-  //console.log(grouped)
 
 
   return (
